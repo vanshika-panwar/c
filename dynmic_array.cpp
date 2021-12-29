@@ -28,6 +28,7 @@ public:
 
 	void increase(){
 		ar = (int*) realloc(ar, sz * 2 * sizeof(int));
+		size=2*sz;
 	}
 	void push_back(int ele){
 		top = top + 1;
@@ -39,7 +40,7 @@ public:
 		}
 	}
 	void pop_back() {
-		if (top > 0) {
+		if (top >= 0) {
 			top--;
 		} else {
 			throw Underflow("Underflow!!");
@@ -49,7 +50,7 @@ public:
 		free(ar);
 	}
 	int size(){
-		return sz;
+		return top+1;
 	}
 	void insert(int index,int val){
 		if(top + 1 < sz){
