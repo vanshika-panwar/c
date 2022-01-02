@@ -28,7 +28,7 @@ public:
 
 	void increase(){
 		ar = (int*) realloc(ar, sz * 2 * sizeof(int));
-		size=2*sz;
+		sz=2*sz;
 	}
 	void push_back(int ele){
 		top = top + 1;
